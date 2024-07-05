@@ -12,7 +12,7 @@
 #define endl        '\n'
 
 using namespace std;
-using Graph = vector<vector<int>>;
+using Graph = vector<vector<int> >;
 using ll = long long;
 
 int main() {
@@ -21,7 +21,29 @@ int main() {
     cout.precision(10);
 
 
-    //content
+    ll n, s;
+    cin >> n;
+
+    bool found = true;
+
+    while(found) {
+        s = sqrt(n);
+        found = false;
+
+        for(int i = 2; i <= s; i++) {
+            int x = n % i;
+            if(n % i == 0) {
+                n = n / i;
+                found = true;
+                break;
+            }
+        }
+    }
+
+    cout << n;
+
+
+
 
 
     return 0;

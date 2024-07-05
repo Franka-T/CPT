@@ -1,7 +1,6 @@
 
 //#include <bits/stdc++.h>
 #include <vector>
-#include <climits>
 #include <iostream>
 #include <queue>
 #include <tuple>
@@ -21,9 +20,24 @@ int main() {
     cout.precision(10);
 
 
-    //content
+    int n;
+    cin >> n;
 
+    vector<int> monsters(n);
+    vector<ll> coins(n);
+
+    rep(i,n) {
+        cin >> monsters[i];
+    }
+
+    coins[0] = monsters[0];
+    if(n > 1) coins[1] = max(monsters[0], monsters[1]);
+
+    for(int i = 2; i < n; i++) {
+        coins[i] = max(coins[i-2] + monsters[i], coins[i-1]);
+    }
+
+    cout << coins[n-1] << endl;
 
     return 0;
 }
-

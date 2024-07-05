@@ -1,8 +1,11 @@
 
 //#include <bits/stdc++.h>
 #include <vector>
+#include <climits>
 #include <iostream>
-using namespace std;
+#include <queue>
+#include <tuple>
+#include <cmath>
 
 #define rep(a, b)   for(int a = 0; a < (b); ++a)
 #define all(a)      (a).begin(),(a).end()
@@ -12,30 +15,23 @@ using namespace std;
 using Graph = vector<vector<int> >;
 using ll = long long;
 
-void switchA(vector<int> &a) {
-    a[0]=3;
-}
-
-void switchB(vector<int> b) {
-    b[0]=3;
-}
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.precision(10);
 
 
-    vector<int> a (3,1);
-    vector<int> b (3,1);
+    int c,a,b;
+    cin >> c;
 
-    switchA(a);
-    switchB(b);
-
-    rep(i,3){cout << a[i] << " ";}
-    cout << endl;
-    rep(i,3){cout << b[i] << " ";}
-    cout << endl;
+    for(int i = -120; i < 120; i++) {
+        for(int j = -120; j < 120; j++) {
+            if(pow(i, 5) - pow(j, 5) == c) {
+                cout << i << " " << j;
+                return 0;
+            }
+        }
+    }
 
 
     return 0;

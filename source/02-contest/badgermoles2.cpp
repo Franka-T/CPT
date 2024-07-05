@@ -12,7 +12,7 @@
 #define endl        '\n'
 
 using namespace std;
-using Graph = vector<vector<int>>;
+using Graph = vector<vector<int> >;
 using ll = long long;
 
 int main() {
@@ -20,8 +20,26 @@ int main() {
     cin.tie(nullptr);
     cout.precision(10);
 
+    int n, m, k;
+    cin >> n >> m >> k;
 
-    //content
+    int highscore = m / n;
+    m -= highscore * n;
+
+    //vector<int> backyard (n,start);
+    //if(m > 0) backyard[k] += 1;
+
+    int l = max(k - 1,0);
+    int r = max(n - k,0);
+
+    m += max(0, (l - 1) * 2 + 1);
+    m += max(0,(r - 1) * 2 + 1);
+
+    highscore += m/n;
+
+    cout << highscore;
+
+
 
 
     return 0;
