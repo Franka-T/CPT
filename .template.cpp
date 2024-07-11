@@ -1,18 +1,17 @@
-
-//#include <bits/stdc++.h>
 #include <vector>
 #include <climits>
 #include <iostream>
 #include <queue>
 #include <tuple>
 #include <cmath>
+#include <algorithm>
 
 #define rep(a, b)   for(int a = 0; a < (b); ++a)
 #define all(a)      (a).begin(),(a).end()
 #define endl        '\n'
 
 using namespace std;
-using Graph = vector<vector<int>>;
+using Graph = vector<vector<int> >;
 using ll = long long;
 
 int main() {
